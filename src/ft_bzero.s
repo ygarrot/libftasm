@@ -10,8 +10,10 @@ section .text
 _ft_bzero:
 	push rbp
 	mov rbp, rsp
-	sub rsp, 16
-	lea rdi, [rel hello.string]
-	call _printf
-	leave
+	mov ecx, 16
+
+.loop
+	jmp .loop
+	mov rsp, rbp
+	pop rbp
 	ret
