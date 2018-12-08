@@ -9,23 +9,27 @@ section .text
 	global _ft_isalpha
 
 _ft_isalpha:
-	cmp rdi, MIN_LOW_ALPHA 
+.LOWER
+	cmp rdi, MIN_LOW_ALPHA
 	jl .ELSE
 	cmp rdi, MAX_LOW_ALPHA
-	jg .between
-	cmp rdi, MAX_UP_ALPHA
-	jg .ELSE
+	jg .UPPER
 	jmp .END
 	ret
 
-.between:
+.UPPER:
 	cmp rdi, MIN_UP_ALPHA
 	jl .ELSE
+	cmp rdi, MAX_UP_ALPHA
+	jg .ELSE
+	jmp .END
+
+.END:
+	mov eax, TRUE
+	ret
 
 .ELSE:
 	mov eax, FALSE
 	ret
 
-.END:
-	mov eax, TRUE
-	ret
+
