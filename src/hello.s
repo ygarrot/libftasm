@@ -4,15 +4,14 @@ hello:
 	.len equ $ - hello.string
 
 section .text
-	global _ft_bzero
+	global _pop
 	extern _printf
 
-_ft_bzero:
+_pop:
 	push rbp
 	mov rbp, rsp
 	sub rsp, 16
-	;mov rdi, 0 
-	lea rdi, [rel rdi]
+	lea rdi, [rel hello.string]
 	call _printf
 	leave
 	ret
