@@ -6,6 +6,7 @@
 
 section .text
 	global _ft_islower
+
 _ft_islower:
 .lower:
 	cmp rdi, MIN_LOW_ALPHA

@@ -5,12 +5,12 @@ section .text
 _ft_toupper:
 .check:
 	call _ft_islower
-	cmp eax, 0
-	jz .ret 
+	cmp eax, 1
+	mov rax, rdi
+	jnz .to_upper
+	ret
 
 .to_upper:
-	mov eax, [rel rdi]
+	sub rax, 32
 	ret
 
-.ret:
-	ret
