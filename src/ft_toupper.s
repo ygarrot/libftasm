@@ -1,13 +1,13 @@
-%include "src/ft_islower.s"
+%include "src/ft_isalpha.s"
 section .text
 	global _ft_toupper
 
 _ft_toupper:
 .check:
 	call _ft_islower
-	cmp eax, 1
+	cmp eax, 1 
 	mov rax, rdi
-	jnz .to_upper
+	jz .to_upper
 	ret
 
 .to_upper:

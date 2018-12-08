@@ -1,20 +1,21 @@
-%define MIN_LOW_ALPHA 65
-%define MAX_LOW_ALPHA 90
+%define MIN_UP_ALPHA 65
+%define MAX_UP_ALPHA 90
 
-%include "src/ft_isupper.s"
+%include "src/ft_islower.s"
+
 section .text
 	global _ft_isalpha
 
 _ft_isalpha:
-.lower:
-	cmp rdi, MIN_LOW_ALPHA
+.upper:
+	cmp rdi, MIN_UP_ALPHA
 	jl .smash
-	cmp rdi, MAX_LOW_ALPHA
-	jg .upper
+	cmp rdi, MAX_UP_ALPHA
+	jg .lower
 	jmp .pass
 
-.upper:
-	call _ft_isupper
+.lower:
+;	call _ft_islower
 	jmp .tern
 
 .pass:
