@@ -1,18 +1,12 @@
-section .data
-hello:
-	.string db "Hello World!", 12
-	.len equ $ - hello.string
-
 section .text
-	global _ft_bzero
-	extern _printf
-
+global _ft_bzero
 _ft_bzero:
-	push rbp
-	mov rbp, rsp
-	sub rsp, 16
-	;mov rdi, 0 
-	lea rdi, [rel rdi]
-	call _printf
-	leave
-	ret
+.loop:
+dec rsi
+cmp rsi, 0
+jl .ret
+mov byte [rdi+rsi], 0
+jmp .loop
+.ret:
+ret
+

@@ -6,7 +6,7 @@
 #    By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/07 11:09:55 by ygarrot           #+#    #+#              #
-#    Updated: 2018/12/08 11:07:16 by ygarrot          ###   ########.fr        #
+#    Updated: 2018/12/08 14:36:00 by ygarrot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,12 +15,14 @@ NAME = LibftASM.a
 SRC_DIR = src
 OBJ_DIR = obj
 TEST_DIR = test
-SRC = *.s
+
+SRC = ft_bzero.s \
+	  ft_isalpha.s
 TEST_EXEC = test_e
 
+NASM_CMD = nasm -f macho64 -g
 CC_FLAGS = -Wall -Werror -Wextra -o
 SANITIZE = -fsanitize=address
-NASM_CMD = nasm -f macho64 -g
 #INC_DIR = includes
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
@@ -48,8 +50,8 @@ fclean: clean
 
 re: fclean all
 
-test: $(NAME) 
-	@gcc $(SANITIZE) $(CC_FLAGS) $(TEST_EXEC) $(TEST_DIR)/*.c $(NAME)
+test: re
+	@gcc $(SANITIZE) $(CC_FLAGS) $(TEST_EXEC) $(TEST_DIR)/*.c -I test/includes/ $(NAME)
 	@./$(TEST_EXEC)
 
 .PHONY: all clean fclean re $(NAME)
