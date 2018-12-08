@@ -1,32 +1,31 @@
-%define TRUE 1
-%define FALSE 0
 %define MIN_LOW_ALPHA 65
 %define MAX_LOW_ALPHA 90
-%define MIN_UP_ALPHA 97
-%define MAX_UP_ALPHA 122
 
+%include "src/ft_isupper.s"
 section .text
 	global _ft_isalpha
 
 _ft_isalpha:
-.lower
+.lower:
 	cmp rdi, MIN_LOW_ALPHA
-	jl .else
+	jl .smash
 	cmp rdi, MAX_LOW_ALPHA
 	jg .upper
-	jmp .end
+	jmp .pass
 
 .upper:
-	cmp rdi, MIN_UP_ALPHA
-	jl .else
-	cmp rdi, MAX_UP_ALPHA
-	jg .else
-	jmp .end
+	call _ft_isupper
+	jmp .tern
 
-.end:
+.pass:
 	mov eax, TRUE
 	ret
 
-.else:
+.smash:
 	mov eax, FALSE
 	ret
+
+.tern:
+	cmp eax, 0
+	jz .smash
+	jnz .pass

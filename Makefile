@@ -6,7 +6,7 @@
 #    By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/07 11:09:55 by ygarrot           #+#    #+#              #
-#    Updated: 2018/12/08 14:36:00 by ygarrot          ###   ########.fr        #
+#    Updated: 2018/12/08 16:55:54 by ygarrot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,11 @@ OBJ_DIR = obj
 TEST_DIR = test
 
 SRC = ft_bzero.s \
-	  ft_isalpha.s
+	  ft_isalpha.s \
+	  ft_toupper.s \
+	  ft_islower.s \
+	  ft_isupper.s \
+	  ft_basic.s
 TEST_EXEC = test_e
 
 NASM_CMD = nasm -f macho64 -g
