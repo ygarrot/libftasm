@@ -1,16 +1,20 @@
-%include "src/ft_isalpha.s"
+%define MIN_LOW_ALPHA 97
+%define MAX_LOW_ALPHA 122
+
 section .text
 	global _ft_toupper
 
 _ft_toupper:
 .check:
-	call _ft_islower
-	cmp eax, 1 
 	mov rax, rdi
-	jz .to_upper
-	ret
+	cmp rdi, MIN_LOW_ALPHA
+	jl .ret
+	cmp rdi, MAX_LOW_ALPHA
+	jg .ret
 
 .to_upper:
 	sub rax, 32
 	ret
 
+.ret:
+	ret
