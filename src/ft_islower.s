@@ -15,9 +15,9 @@ _ft_islower:
 	jmp .pass
 
 .smash:
-	mov eax, FALSE
+	mov rax, FALSE
 	ret
 
 .pass:
-	mov eax, TRUE
+	mov rax, TRUE
 	ret

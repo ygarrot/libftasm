@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:59 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/08 17:42:48 by ygarrot          ###   ########.fr       */
+/*   Updated: 2018/12/09 12:50:15 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,4 +17,6 @@ int main()
 	test_bzero();
 	test_isalpha();
 	test_toupper();
+	test_puts();
+	test_strlen();
 }
