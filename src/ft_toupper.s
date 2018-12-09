@@ -11,7 +11,6 @@ _ft_toupper:
 	jl .ret
 	cmp rdi, MAX_LOW_ALPHA
 	jg .ret
-	jz .to_upper
 
 .to_upper:
 	sub rax, 32

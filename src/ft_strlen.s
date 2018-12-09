@@ -9,6 +9,5 @@ _ft_strlen:
 	cld
 	repne scasb
 	sub rdi, rsi
-	dec rdi    
+	dec rdi
 	mov rax, rdi
-	ret

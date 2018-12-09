@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libs_test.h                                        :+:      :+:    :+:   */
+/*   test_strcat.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/08 14:03:42 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/09 13:18:23 by ygarrot          ###   ########.fr       */
+/*   Created: 2018/12/09 13:16:00 by ygarrot           #+#    #+#             */
+/*   Updated: 2018/12/09 13:19:18 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
-#include <unistd.h>
+#include "libs_test.h"
 
-void ft_bzero(char *str, size_t len);
-int ft_isalpha(int c);
-int ft_toupper(int c);
-int ft_puts(const char *s);
-size_t ft_strlen(const char *s);
-char *ft_strcat(const char *s1, const char *s2);
-
-void test_isalpha(void);
-void test_bzero(void);
-void test_toupper(void);
-void test_puts(void);
-void test_strlen(void);
-void test_strcat(void);
+void test_strcat()
+{
+	char *str = "string";
+	printf("STRING : %s, MINE : %s", str, ft_strcat(str, str));
+}

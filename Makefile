@@ -6,7 +6,7 @@
 #    By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/07 11:09:55 by ygarrot           #+#    #+#              #
-#    Updated: 2018/12/09 12:25:53 by ygarrot          ###   ########.fr        #
+#    Updated: 2018/12/09 13:18:33 by ygarrot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -23,6 +23,7 @@ SRC = ft_bzero.s \
 	  ft_isupper.s \
 	  ft_basic.s \
 	  ft_strlen.s \
+	  ft_strcat.s \
 	  ft_puts.s
 
 TEST_EXEC = test_e
