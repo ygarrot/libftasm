@@ -6,7 +6,7 @@
 #    By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/07 11:09:55 by ygarrot           #+#    #+#              #
-#    Updated: 2018/12/10 13:31:45 by ygarrot          ###   ########.fr        #
+#    Updated: 2018/12/10 14:19:10 by ygarrot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,14 @@ SRC = ft_bzero.s \
 	  ft_basic.s \
 	  ft_strlen.s \
 	  ft_strcat.s \
+	  ft_memset.s \
 	  ft_puts.s
 
 TEST_EXEC = test_e
 
 NASM_CMD = nasm -f macho64 --prefix _ -dOSX=1 -g
 CC_FLAGS = -Wall -Werror -Wextra -o
-#SANITIZE = -fsanitize=address
+SANITIZE = -fsanitize=address
 INC_DIR = ./test/includes/
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))

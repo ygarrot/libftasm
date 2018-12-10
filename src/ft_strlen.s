@@ -1,6 +1,5 @@
 section .text
 	global ft_strlen
-	extern _printf
 
 ft_strlen:
 	mov rcx, -1
@@ -11,4 +10,5 @@ ft_strlen:
 	sub rdi, rsi
 	dec rdi
 	mov rax, rdi
+	;leave
 	ret

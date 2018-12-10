@@ -1,20 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_strlen.c                                      :+:      :+:    :+:   */
+/*   test_memset.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/09 12:26:19 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/10 13:47:54 by ygarrot          ###   ########.fr       */
+/*   Created: 2018/12/10 14:12:16 by ygarrot           #+#    #+#             */
+/*   Updated: 2018/12/10 15:16:05 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 #include "libs_test.h"
-
-void test_strlen(void)
+void test_memset(void)
 {
-	char *str = "test strlen";
-	printf("TEST : %s, MINE : %lu, TRUE : %lu\n",
-			str, ft_strlen(str), strlen(str));
+	char *str1;
+	str1 = strdup("salut");
+	char c = 'o';
+	int len = ft_strlen(str1);
+
+	ft_memset(str1, c, len);
+	printf("%s\n", str1);
 }
