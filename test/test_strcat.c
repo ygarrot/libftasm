@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/09 13:16:00 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/09 13:19:18 by ygarrot          ###   ########.fr       */
+/*   Updated: 2018/12/10 13:17:20 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,12 @@
 
 void test_strcat()
 {
-	char *str = "string";
-	printf("STRING : %s, MINE : %s", str, ft_strcat(str, str));
+	char src[50], dest[50];
+
+	strcpy(src,  "This is source");
+	strcpy(dest, "This is destination");
+
+	strcat(dest, src);
+	printf("Final destination string : |%s|",
+			dest);
 }

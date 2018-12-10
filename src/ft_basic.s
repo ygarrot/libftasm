@@ -2,9 +2,9 @@
 %define FALSE 0
 
 section .text 
-	global _ft_basic
+	global ft_basic
 
-_ft_basic:
+ft_basic:
 .smash:
 	mov eax, FALSE
 	ret

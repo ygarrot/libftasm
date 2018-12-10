@@ -2,9 +2,9 @@
 %define MAX_LOW_ALPHA 122
 
 section .text
-	global _ft_toupper
+	global ft_toupper
 
-_ft_toupper:
+ft_toupper:
 .check:
 	mov rax, rdi
 	cmp rdi, MIN_LOW_ALPHA

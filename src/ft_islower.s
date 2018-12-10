@@ -5,9 +5,9 @@
 %define MAX_LOW_ALPHA 122
 
 section .text
-	global _ft_islower
+	global ft_islower
 
-_ft_islower:
+ft_islower:
 	cmp rdi, MIN_LOW_ALPHA
 	jl .smash
 	cmp rdi, MAX_LOW_ALPHA

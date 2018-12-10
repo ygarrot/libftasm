@@ -5,12 +5,12 @@
 section .data
 
 section .text
-	global _ft_puts
-	extern _ft_strlen
+	global ft_puts
+	extern ft_strlen
 
-_ft_puts:
+ft_puts:
 	push rdi
-	call _ft_strlen
+	call ft_strlen
 	pop rdi
 	mov rsi, rdi
 	mov rdi, STDOUT
@@ -20,4 +20,3 @@ _ft_puts:
 
 .exit:
 	ret
-

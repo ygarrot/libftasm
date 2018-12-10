@@ -1,8 +1,8 @@
 section .text
-	global _ft_strlen
+	global ft_strlen
 	extern _printf
 
-_ft_strlen:
+ft_strlen:
 	mov rcx, -1
 	mov rsi, rdi
 	mov al, 0
@@ -11,3 +11,4 @@ _ft_strlen:
 	sub rdi, rsi
 	dec rdi
 	mov rax, rdi
+	ret
