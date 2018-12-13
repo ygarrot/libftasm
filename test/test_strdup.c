@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_memcpy.c                                      :+:      :+:    :+:   */
+/*   test_strdup.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/12 12:03:21 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/12 13:05:07 by ygarrot          ###   ########.fr       */
+/*   Created: 2018/12/12 12:52:13 by ygarrot           #+#    #+#             */
+/*   Updated: 2018/12/13 11:49:31 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libs_test.h"
 #include <stdlib.h>
-
-void test_memcpy(void)
+void test_strdup(void)
 {
-	const char src[50] = "http://www.tutorialspoint.com";
-	char dest[50];
-	strcpy(dest,"Heloooo!!");
-	printf("Before memcpy dest = %s\n", dest);
-	printf("%s\n", ft_memcpy(dest, src, strlen(src)+1));
-	printf("After memcpy dest = %s\n", dest);
+	char *str = ft_strdup("test strdup");
+	(void)str;
+	//return ;
+	//printf("%c\n", str[0]);
+	printf("%s\n", str);
+	free(str);
 }

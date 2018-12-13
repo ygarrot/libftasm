@@ -7,6 +7,7 @@ ft_memset:
 	mov rcx, rdx
 	cld
 	rep stosb
+	pop rax
 
 .ret:
 	leave
