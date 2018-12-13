@@ -1,24 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   test_strdup.c                                      :+:      :+:    :+:   */
+/*   test_cat.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/12 12:52:13 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/13 12:33:25 by ygarrot          ###   ########.fr       */
+/*   Created: 2018/12/13 12:22:42 by ygarrot           #+#    #+#             */
+/*   Updated: 2018/12/13 13:31:56 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libs_test.h"
-#include <stdlib.h>
+#include <fcntl.h>
 
-void test_strdup(void)
+void test_cat(void)
 {
-	char *str = ft_strdup("test strdup");
-	(void)str;
-	//return ;
-	//printf("%c\n", str[0]);
-	printf("%s\n", str);
-	free(str);
+	int fd = open("./cat", O_WRONLY);
+	int read = -1;
+	if (fd > 0)
+		read = ft_cat(fd);
+	printf("%s %d\n", "file descriptor : ", fd);
+	if (read != -1)
+		printf("%d\n", read);
 }
