@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:42 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/13 13:25:10 by ygarrot          ###   ########.fr       */
+/*   Updated: 2018/12/13 15:06:57 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ size_t	ft_strlen(const char *s);
 char	*ft_strcat(const char *s1, const char *s2);
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
-int		ft_cat(int fd);
+void	ft_cat(int fd);
 
 void test_isalpha(void);
 void test_isdigit(void);
