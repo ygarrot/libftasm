@@ -8,16 +8,17 @@ section .text
 	global ft_isupper
 
 ft_isupper:
+	enter 0, 0
 	cmp rdi, MIN_UP_ALPHA
 	jl .smash
 	cmp rdi, MAX_UP_ALPHA
 	jg .smash
+	mov eax, TRUE
 	jmp .pass
 
 .smash:
 	mov eax, FALSE
-	ret
 
 .pass:
-	mov eax, TRUE
+	leave
 	ret

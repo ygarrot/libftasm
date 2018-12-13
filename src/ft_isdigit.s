@@ -1,17 +1,17 @@
 %define TRUE 1
 %define FALSE 0
 
-%define MIN_LOW_ALPHA 97
-%define MAX_LOW_ALPHA 122
+%define MIN_DIGIT 48
+%define MAX_DIGIT 57
 
 section .text
-	global ft_islower
+	global ft_isdigit
 
-ft_islower:
+ft_isdigit:
 	enter 0, 0
-	cmp rdi, MIN_LOW_ALPHA
+	cmp rdi, MIN_DIGIT
 	jl .smash
-	cmp rdi, MAX_LOW_ALPHA
+	cmp rdi, MAX_DIGIT
 	jg .smash
 	mov rax, TRUE
 	jmp .ret

@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:42 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/13 15:06:57 by ygarrot          ###   ########.fr       */
+/*   Updated: 2018/12/13 16:44:25 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 
 void	ft_bzero(char *str, size_t len);
 int		ft_isalpha(int c);
+int		ft_isdigit(int c);
+int		ft_islower(int c);
+int		ft_isupper(int c);
+int		ft_isalnum(int c);
+int		ft_isprint(int c);
+int		ft_isascii(int c);
 int		ft_toupper(int c);
 int		ft_puts(const char *s);
 char	*ft_strdup(const char *s1);
@@ -40,3 +46,5 @@ void test_memset(void);
 void test_memcpy(void);
 
 void test_cat(void);
+int test_limit(int min, int max, int (*to_test)(int), int (*right)(int));
+

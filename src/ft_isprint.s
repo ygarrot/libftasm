@@ -1,17 +1,17 @@
 %define TRUE 1
 %define FALSE 0
 
-%define MIN_LOW_ALPHA 97
-%define MAX_LOW_ALPHA 122
+%define MIN_PRINT 32
+%define MAX_PRINT 128
 
 section .text
-	global ft_islower
+	global ft_isprint
 
-ft_islower:
+ft_isprint:
 	enter 0, 0
-	cmp rdi, MIN_LOW_ALPHA
+	cmp rdi, MIN_PRINT
 	jl .smash
-	cmp rdi, MAX_LOW_ALPHA
+	cmp rdi, MAX_PRINT
 	jg .smash
 	mov rax, TRUE
 	jmp .ret
