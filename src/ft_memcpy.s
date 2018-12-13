@@ -3,7 +3,6 @@ section .text
 
 ft_memcpy:
 	enter 16, 0
-bp6:
 	push rdi
 	mov rcx, rdx
 	cld

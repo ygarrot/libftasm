@@ -7,7 +7,7 @@ ft_strlen:
 .init:
 	mov rcx, -1
 	mov rsi, rdi
-	mov al, 0
+	xor al, al
 
 .len:
 	cld

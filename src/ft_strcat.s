@@ -1,10 +1,7 @@
-section .data
-format db "%s", 0xa
-
 section .text
 	global ft_strcat
 	extern printf
-	
+
 ft_strcat:
 	enter 0, 0
 	cmp byte[rdi], 0

@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:59 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/13 16:53:48 by ygarrot          ###   ########.fr       */
+/*   Updated: 2018/12/13 17:05:44 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ int main()
 	/*test_strlen();
 	  test_isalpha();
 	  test_toupper();
-	  test_bzero();
 	  test_memset();
 	  test_strcat();
 	  test_puts();
@@ -38,5 +37,6 @@ int main()
 	test_limit(0, 128, ft_isalnum, isalnum);
 	printf("isprint : \n");
 	test_limit(0, 128, ft_isprint, isprint);
+	test_bzero();
 	printf("test done\n");
 }
