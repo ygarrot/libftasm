@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:59 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/14 12:53:39 by ygarrot          ###   ########.fr       */
+/*   Updated: 2018/12/14 13:16:23 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@
 #include <stdlib.h>
 #include <ctype.h>
 
+int		ft_abs(int nb);
+
+void test_abs(void)
+{
+	printf("%d\n", ft_abs(-5));
+}
 void test_strdup(void)
 {
 	char *str = ft_strdup("test strdup");
@@ -110,7 +116,7 @@ void test_memset(void)
 
 void test_isin(void)
 {
-	printf("%d\n", ft_isin('c', "salut les "));
+	printf("%d\n", ft_isin('c', "asca"));
 }
 
 int main()
@@ -126,8 +132,9 @@ int main()
 		test_bzero();
 	test_memalloc();
 	test_memdel();
-	  */
 	test_isin();
+	  */
+	test_abs();
 	//	test_strdup();
 		/*printf("islower : \n");
 	

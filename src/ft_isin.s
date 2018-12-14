@@ -7,12 +7,20 @@ section .text
 
 ft_isin:
 	enter 0, 0
+	cmp BYTE[rsi], 0
+	je smash
+
+save:
 	push rdi
 	push rsi
 	mov rdi, rsi
 	call ft_strlen
+
+recover:
 	pop rdi
 	pop rsi
+
+find:
 	mov al, sil 
 	mov rcx, rax
 	repne scasb
