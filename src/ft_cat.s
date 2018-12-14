@@ -5,7 +5,7 @@
 
 section .data
 	buf times 255 db 0
-	bufsize equ $ - buf
+	buf_size equ $ - buf
 
 section .text
 	global ft_cat
@@ -14,29 +14,30 @@ ft_cat:
 	enter 0, 0
 	mov r14, rdi
 	lea rsi, [rel buf]
-	;read(fd, buff_size, buf)
-.read:
+
+	;read(fd, buf, buf_size)
+read:
 	mov rdi, r14
-	mov rdx, bufsize
+	mov rdx, buf_size
 	mov rax, MACH_SYSCALL(READ)
 	syscall
-	jc .err
+	jc err
 	cmp rax, 0
-	je .ret
+	jz ret
 
 	;write(fd, buf, buff_size)
-.write:
+write:
 	mov rdi, STDIN
 	mov rdx, rax
 	mov rax, MACH_SYSCALL(WRITE)
 	syscall
-	jc .err
-	jmp .read
+	jc err 
+	jmp read
 
-.err:
-	mov rax, 1
+err:
+	mov rax, -1
 
-.ret:
+ret:
 	leave
 	ret
 
