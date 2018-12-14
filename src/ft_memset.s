@@ -9,6 +9,6 @@ ft_memset:
 	rep stosb
 	pop rax
 
-.ret:
+ret:
 	leave
 	ret

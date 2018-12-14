@@ -9,6 +9,6 @@ ft_memcpy:
 	rep movsb
 	pop rax
 
-.ret:
+ret:
 	leave
 	ret

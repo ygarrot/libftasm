@@ -5,16 +5,17 @@ section .text
 	global ft_toupper
 
 ft_toupper:
-.check:
+	enter 0, 0
 	mov rax, rdi
 	cmp rdi, MIN_LOW_ALPHA
-	jl .ret
+	jl ret
 	cmp rdi, MAX_LOW_ALPHA
-	jg .ret
+	jg ret
 
-.to_upper:
+to_upper:
 	sub rax, 32
 	ret
 
-.ret:
+ret:
+	leave
 	ret

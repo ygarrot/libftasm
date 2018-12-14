@@ -10,15 +10,15 @@ section .text
 ft_isascii:
 	enter 0, 0
 	cmp rdi, MIN_ASCII
-	jl .smash
+	jl smash
 	cmp rdi, MAX_ASCII
-	jg .smash
+	jg smash
 	mov rax, TRUE
-	jmp .ret
+	jmp ret
 
-.smash:
+smash:
 	mov rax, FALSE
 
-.ret:
+ret:
 	leave
 	ret

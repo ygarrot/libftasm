@@ -6,10 +6,11 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:42 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/13 16:44:25 by ygarrot          ###   ########.fr       */
+/*   Updated: 2018/12/14 12:52:31 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
+#ifndef LIBS_TEST_H
+# define LIBS_TEST_H
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
@@ -29,7 +30,10 @@ size_t	ft_strlen(const char *s);
 char	*ft_strcat(const char *s1, const char *s2);
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
+void	*ft_memalloc(size_t size);
 void	ft_cat(int fd);
+void	ft_memdel(char **ptr);
+int		ft_isin(char c, char *str);
 
 void test_isalpha(void);
 void test_isdigit(void);
@@ -44,7 +48,7 @@ void test_strdup(void);
 void test_bzero(void);
 void test_memset(void);
 void test_memcpy(void);
-
+void test_memalloc(void);
 void test_cat(void);
 int test_limit(int min, int max, int (*to_test)(int), int (*right)(int));
-
+#endif

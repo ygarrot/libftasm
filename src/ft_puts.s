@@ -13,7 +13,7 @@ ft_puts:
 	push rdi
 	call ft_strlen
 	cmp rax, 0
-	jz .ret
+	je ret
 	pop rdi
 	mov rsi, rdi
 	mov rdi, STDOUT
@@ -21,6 +21,6 @@ ft_puts:
 	mov rax, MACH_SYSCALL(WRITE)
 	syscall
 
-.ret:
+ret:
 	leave
 	ret

@@ -1,8 +1,8 @@
 section .text
-	global ft_strdup
-	extern ft_strlen
-	extern ft_memcpy
-	extern malloc
+global ft_strdup
+extern ft_strlen
+extern ft_memcpy
+extern malloc
 
 ft_strdup:
 	enter 0, 0 ;alignement de la stack
@@ -27,5 +27,5 @@ ft_strdup:
 	call ft_memcpy
 
 .ret:
-	leave ; clean de la stack
+	leave ; clean stack
 	ret

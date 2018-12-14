@@ -4,18 +4,18 @@ section .text
 ft_strlen:
 	enter 16, 0
 
-.init:
-	mov rcx, -1
-	mov rsi, rdi
-	xor al, al
+init:
+	mov rcx, -1	;rcx = value max
+	mov rsi, rdi; rsi =rdi
+	xor al, al	; al = 0
 
-.len:
+len:
 	cld
-	repne scasb
-	sub rdi, rsi
-	dec rdi
-	mov rax, rdi
+	repne scasb		;tant que [rdi] != al rdi++; rcx--
+	sub rdi, rsi	;rdi = rdi - rsi
+	dec rdi			;rdi len -1
+	mov rax, rdi	;rax = rdi
 
-.ret:
+ret:
 	leave
 	ret

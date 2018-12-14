@@ -7,9 +7,9 @@ ft_isalpha:
 	enter 0, 0
 	call ft_islower
 	cmp rax, 0
-	je .ret
+	je ret
 	call ft_isupper
 
-.ret:
+ret:
 	leave
 	ret

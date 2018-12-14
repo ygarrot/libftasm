@@ -6,7 +6,7 @@
 #    By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/07 11:09:55 by ygarrot           #+#    #+#              #
-#    Updated: 2018/12/13 16:45:26 by ygarrot          ###   ########.fr        #
+#    Updated: 2018/12/14 12:47:46 by ygarrot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,11 +25,13 @@ SRC = ft_bzero.s \
 	  ft_isprint.s \
 	  ft_isalnum.s \
 	  ft_isupper.s \
-	  ft_basic.s \
 	  ft_strlen.s \
 	  ft_strcat.s \
 	  ft_memset.s \
 	  ft_memcpy.s \
+	  ft_memalloc.s \
+	  ft_memdel.s \
+	  ft_isin.s \
 	  ft_cat.s \
 	  ft_strdup.s \
 	  ft_puts.s

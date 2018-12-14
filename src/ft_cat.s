@@ -21,9 +21,9 @@ read:
 	mov rdx, buf_size
 	mov rax, MACH_SYSCALL(READ)
 	syscall
-	jc err
+	jc exit
 	cmp rax, 0
-	jz ret
+	jz exit 
 
 	;write(fd, buf, buff_size)
 write:
@@ -31,13 +31,10 @@ write:
 	mov rdx, rax
 	mov rax, MACH_SYSCALL(WRITE)
 	syscall
-	jc err 
+	jc exit
 	jmp read
 
-err:
-	mov rax, -1
-
-ret:
+exit:
 	leave
 	ret
 

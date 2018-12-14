@@ -10,15 +10,15 @@ section .text
 ft_isupper:
 	enter 0, 0
 	cmp rdi, MIN_UP_ALPHA
-	jl .smash
+	jl smash
 	cmp rdi, MAX_UP_ALPHA
-	jg .smash
+	jg smash
 	mov eax, TRUE
-	jmp .pass
+	jmp ret
 
-.smash:
+smash:
 	mov eax, FALSE
 
-.pass:
+ret:
 	leave
 	ret

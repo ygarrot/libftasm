@@ -2,13 +2,15 @@ section .text
 	global ft_bzero
 
 ft_bzero:
-	;enter 0, 0
+	enter 16, 0
+
+loop:
 	cmp rsi, 0
-	jz .ret
+	je ret
 	dec rsi
 	mov byte [rdi + rsi], 0
-	jmp ft_bzero
+	jmp loop
 
-.ret:
-	;leave
+ret:
+	leave
 	ret
