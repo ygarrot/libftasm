@@ -1,20 +1,16 @@
-%define MIN_LOW_ALPHA 97
-%define MAX_LOW_ALPHA 122
-
 section .text
 	global ft_toupper
+	extern ft_islower
 
 ft_toupper:
 	enter 0, 0
+	call ft_islower
+	cmp rax, 0
 	mov rax, rdi
-	cmp rdi, MIN_LOW_ALPHA
-	jl ret
-	cmp rdi, MAX_LOW_ALPHA
-	jg ret
+	jz ret
 
 to_upper:
 	sub rax, 32
-	ret
 
 ret:
 	leave

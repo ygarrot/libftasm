@@ -1,26 +1,28 @@
 section .text
 	global ft_strcat
+	extern ft_strlen
 
 ft_strcat:
 	enter 0, 0
+	mov rax, rdi 
+
+strlen:
 	cmp byte[rdi], 0
-	je exit
-	call copy
+	je copy
 	inc rdi
-	mov byte[rdi], 0
-	mov rax, rdi
-	jmp exit 
+	jmp strlen
 
 copy:
 	cmp byte[rsi], 0
 	je exit
-	mov al, byte[rsi]
-	mov byte[rdi], al
+	mov cl, [rsi]
+	mov [rdi], cl 
 	inc rdi
 	inc rsi
 	jmp copy
 
 exit:
+	mov byte[rdi], 0
 	leave
 	ret
 

@@ -6,11 +6,14 @@
 #    By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/07 11:09:55 by ygarrot           #+#    #+#              #
-#    Updated: 2018/12/14 13:07:03 by ygarrot          ###   ########.fr        #
+#    Updated: 2019/01/29 16:31:32 by ygarrot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = LibftASM.a
+.PHONY: all clean fclean re $(NAME)
+.SUFFIXES:
+
+NAME = libfts.a
 
 SRC_DIR = src
 OBJ_DIR = obj
@@ -19,6 +22,7 @@ TEST_DIR = test
 SRC = ft_bzero.s \
 	  ft_isalpha.s \
 	  ft_toupper.s \
+	  ft_tolower.s \
 	  ft_islower.s \
 	  ft_isdigit.s \
 	  ft_isascii.s \
@@ -29,6 +33,8 @@ SRC = ft_bzero.s \
 	  ft_strcat.s \
 	  ft_memset.s \
 	  ft_memcpy.s \
+		ft_min.s \
+		ft_max.s \
 	  ft_memalloc.s \
 	  ft_memdel.s \
 	  ft_isin.s \
@@ -41,7 +47,7 @@ TEST_EXEC = test_e
 
 NASM_CMD = nasm -f macho64 --prefix _ -dOSX=1 -g
 CC_FLAGS = -Wall -Werror -Wextra -o
-SANITIZE = -fsanitize=address
+SANITIZE = -fsanitize=address -g3
 INC_DIR = ./test/includes/
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))
@@ -73,4 +79,3 @@ test: re
 	@gcc $(SANITIZE) $(CC_FLAGS) $(TEST_EXEC) $(TEST_DIR)/*.c -I $(INC_DIR) $(NAME)
 	@./$(TEST_EXEC)
 
-.PHONY: all clean fclean re $(NAME)

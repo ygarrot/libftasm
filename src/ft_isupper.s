@@ -1,8 +1,8 @@
 %define TRUE 1
 %define FALSE 0
 
-%define MIN_UP_ALPHA 65
-%define MAX_UP_ALPHA 90
+%define MIN_UP_ALPHA 'A' 
+%define MAX_UP_ALPHA 'Z'
 
 section .text
 	global ft_isupper
@@ -13,11 +13,11 @@ ft_isupper:
 	jl smash
 	cmp rdi, MAX_UP_ALPHA
 	jg smash
-	mov eax, TRUE
+	mov rax, TRUE
 	jmp ret
 
 smash:
-	mov eax, FALSE
+	mov rax, FALSE
 
 ret:
 	leave

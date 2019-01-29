@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:42 by ygarrot           #+#    #+#             */
-/*   Updated: 2018/12/14 12:52:31 by ygarrot          ###   ########.fr       */
+/*   Updated: 2019/01/29 15:54:14 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBS_TEST_H
@@ -14,6 +14,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <unistd.h>
+/* #include "../libft/includes/libft.h" */
 
 void	ft_bzero(char *str, size_t len);
 int		ft_isalpha(int c);
@@ -24,6 +25,10 @@ int		ft_isalnum(int c);
 int		ft_isprint(int c);
 int		ft_isascii(int c);
 int		ft_toupper(int c);
+int		ft_tolower(int c);
+int		ft_min(int a, int b);
+int		ft_max(int a, int b);
+int		ft_tolower(int c);
 int		ft_puts(const char *s);
 char	*ft_strdup(const char *s1);
 size_t	ft_strlen(const char *s);
@@ -32,7 +37,7 @@ void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memalloc(size_t size);
 void	ft_cat(int fd);
-void	ft_memdel(char **ptr);
+void	ft_memdel(void **ptr);
 int		ft_isin(char c, char *str);
 
 void test_isalpha(void);

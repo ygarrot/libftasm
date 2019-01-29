@@ -3,12 +3,12 @@ section .text
 	extern free
 
 ft_memdel:
-	enter 8, 0
+	enter 16, 0
 	push rdi
+	push qword [rdi]
 	mov rdi, [rdi]
 	call free
 	pop rdi
-	mov rdi, [rdi]
 	mov BYTE[rdi], 0
 
 ret:

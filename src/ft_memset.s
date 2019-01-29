@@ -3,6 +3,7 @@ section .text
 
 ft_memset:
 	enter 0, 0
+	push rdi
 	mov al, sil
 	mov rcx, rdx
 	cld

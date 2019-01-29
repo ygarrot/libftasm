@@ -6,8 +6,8 @@ section .text
 ft_isalnum:
 	enter 0, 0
 	call ft_isdigit
-	cmp rax, 0
-	jz ret
+	cmp rax, 1
+	je ret
 	call ft_isalpha
 
 ret:
