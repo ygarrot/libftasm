@@ -6,7 +6,7 @@
 #    By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/07 11:09:55 by ygarrot           #+#    #+#              #
-#    Updated: 2019/01/30 18:54:58 by ygarrot          ###   ########.fr        #
+#    Updated: 2019/01/30 19:19:57 by ygarrot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,32 +20,32 @@ OBJ_DIR = obj
 TEST_DIR = test
 
 SRC = ft_bzero.s \
-	  ft_isalpha.s \
-	  ft_toupper.s \
-	  ft_tolower.s \
-	  ft_islower.s \
-	  ft_isdigit.s \
-	  ft_isascii.s \
-	  ft_isprint.s \
-	  ft_isalnum.s \
-	  ft_isupper.s \
-	  ft_strlen.s \
-	  ft_strnlen.s \
-		ft_strlento.s \
-	  ft_strcat.s \
-	  ft_strcpy.s \
-	  ft_memset.s \
-	  ft_memcpy.s \
-		ft_min.s \
-		ft_max.s \
-	  ft_memalloc.s \
-	  ft_isin.s \
-	  ft_abs.s \
-	  ft_cat.s \
-	  ft_strdup.s \
-	  ft_strdupto.s \
-	  ft_strndup.s \
-	  ft_puts.s
+			ft_isalpha.s \
+			ft_toupper.s \
+			ft_tolower.s \
+			ft_islower.s \
+			ft_isdigit.s \
+			ft_isascii.s \
+			ft_isprint.s \
+			ft_isalnum.s \
+			ft_isupper.s \
+			ft_strlen.s \
+			ft_strnlen.s \
+			ft_strlento.s \
+			ft_strcat.s \
+			ft_strcpy.s \
+			ft_memset.s \
+			ft_memcpy.s \
+			ft_min.s \
+			ft_max.s \
+			ft_memalloc.s \
+			ft_isin.s \
+			ft_abs.s \
+			ft_cat.s \
+			ft_strdup.s \
+			ft_strdupto.s \
+			ft_strndup.s \
+			ft_puts.s
 
 TEST_EXEC = test.exe
 
