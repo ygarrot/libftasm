@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:59 by ygarrot           #+#    #+#             */
-/*   Updated: 2019/01/30 17:40:32 by ygarrot          ###   ########.fr       */
+/*   Updated: 2019/01/30 19:08:44 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,6 +67,16 @@ void test_strndup(void)
 	free(str);
 }
 
+void test_strdupto(void)
+{
+	printf("*****************************  TEST STRDUPTO\n");
+	char *str = ft_strdupto("test strdup", 'u');
+	printf("{%s}\n", str);
+	free(str);
+	str = ft_strdupto("", 'c');
+	printf("{%s}\n", str);
+	free(str);
+}
 
 void test_strdup(void)
 {
@@ -126,6 +136,15 @@ void test_strnlen(void)
 			str, ft_strnlen("1", 5), strnlen("1", 5));
 }
 
+
+void test_strlento(void)
+{
+	printf("*****************************  TEST STRLENTO\n");
+	printf("%d\n", (int)ft_strlento("petitponeys", 'y'));
+	printf("%d\n", (int)ft_strlento("", 'y'));
+	printf("%d\n", (int)ft_strlento("ry", 'y'));
+	printf("%d\n", (int)ft_strlento("y", 'y'));
+}
 
 void test_strlen(void)
 {
@@ -246,41 +265,47 @@ void test_isin(void)
 
 int main()
 {
-	/* test_cat(); */
-	/* /1* test_isalpha(); *1/ */
-	/* test_strlen(); */
-	/* test_strnlen(); */
-	test_memcpy();
+	test_strlen();
+	test_strnlen();
+	test_strlento();
+
 	test_strdup();
 	test_strndup();
-	test_strcpy();
-	/* test_toupper(); */
-	/* test_memset(); */
-	/* test_puts(); */
-	/* test_memset(); */
-	/* test_bzero(); */
-	/* test_memalloc(); */
-	/* test_isin(); */
-	/* test_abs(); */
-	/* test_min(); */
-	/* test_max(); */
-	/* test_strdup(); */
-	/* test_puts(); */
-	/* test_strcat(); */
-	/* test_limit(0, 255, ft_tolower, tolower); */
-	/* printf("islower : \n"); */
+	test_strdupto();
 
-	/* test_limit(0, 255, ft_islower, islower); */
-	/* printf("isupper : \n"); */
-	/* test_limit(0, 255, ft_isupper, isupper); */
-	/* printf("isdigit : \n"); */
-	/* test_limit(0, 255, ft_isdigit, isdigit); */
-	/* printf("isascii : \n"); */
-	/* test_limit(0, 255, ft_isascii, isascii); */
-	/* printf("isalnum : \n"); */
-	/* test_limit(0, 255, ft_isalnum, isalnum); */
-	/* printf("isprint : \n"); */
-	/* test_limit(0, 255, ft_isprint, isprint); */
+	test_strcpy();
+	test_strcat();
+	test_memcpy();
+	test_memset();
+
+	test_puts();
+	test_bzero();
+	test_memalloc();
+	test_isin();
+	test_abs();
+	test_min();
+	test_max();
+
+	printf("tolower : \n");
+	test_limit(0, 255, ft_tolower, tolower);
+	printf("toupper : \n");
+	test_limit(0, 255, ft_toupper, toupper);
+	printf("isalpha : \n");
+	test_limit(0, 255, ft_isalpha, isalpha);
+	printf("islower : \n");
+	test_limit(0, 255, ft_islower, islower);
+	printf("isupper : \n");
+	test_limit(0, 255, ft_isupper, isupper);
+	printf("isdigit : \n");
+	test_limit(0, 255, ft_isdigit, isdigit);
+	printf("isascii : \n");
+	test_limit(0, 255, ft_isascii, isascii);
+	printf("isalnum : \n");
+	test_limit(0, 255, ft_isalnum, isalnum);
+	printf("isprint : \n");
+	test_limit(0, 255, ft_isprint, isprint);
+
+	test_cat();
 
 	printf("test done\n");
 }

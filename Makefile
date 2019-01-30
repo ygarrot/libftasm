@@ -6,7 +6,7 @@
 #    By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/07 11:09:55 by ygarrot           #+#    #+#              #
-#    Updated: 2019/01/30 17:41:04 by ygarrot          ###   ########.fr        #
+#    Updated: 2019/01/30 18:54:58 by ygarrot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,6 +31,7 @@ SRC = ft_bzero.s \
 	  ft_isupper.s \
 	  ft_strlen.s \
 	  ft_strnlen.s \
+		ft_strlento.s \
 	  ft_strcat.s \
 	  ft_strcpy.s \
 	  ft_memset.s \
@@ -42,6 +43,7 @@ SRC = ft_bzero.s \
 	  ft_abs.s \
 	  ft_cat.s \
 	  ft_strdup.s \
+	  ft_strdupto.s \
 	  ft_strndup.s \
 	  ft_puts.s
 
