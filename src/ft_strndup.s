@@ -1,15 +1,16 @@
 section .text
-global ft_strdup
-extern ft_strlen
+global ft_strndup
+extern ft_strnlen
 extern ft_memcpy
 extern malloc
 
-ft_strdup:
+ft_strndup:
 	enter 16, 0 ;alignement de la stack
 	push rdi ; save argv[1] sur la stack
+	;push rsi
 
 .strlen:
-	call ft_strlen
+	call ft_strnlen
 	;move return value into malloc argument
 	mov rdi, rax
 	inc rdi ;string length + '\0'
@@ -20,11 +21,12 @@ ft_strdup:
 	cmp rax, 0 ;if(rax == NULL)
 	jz .ret    ;return
 
-	pop rdx    ;rdx = rdi(saved the stack)
+	pop rdx    ;rdx = rdi(saved on the stack)
 	mov rdi, rax ;memcpy arg1 = malloc(len)
 	;memcpy arg2 = arg1(saved on stack)
 	pop rsi
 	call ft_memcpy
+	mov byte[rax+rdx-1], 0
 
 .ret:
 	leave ; clean stack

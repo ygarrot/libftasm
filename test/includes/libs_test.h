@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:42 by ygarrot           #+#    #+#             */
-/*   Updated: 2019/01/29 15:54:14 by ygarrot          ###   ########.fr       */
+/*   Updated: 2019/01/30 17:40:48 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBS_TEST_H
@@ -31,13 +31,15 @@ int		ft_max(int a, int b);
 int		ft_tolower(int c);
 int		ft_puts(const char *s);
 char	*ft_strdup(const char *s1);
+char	*ft_strndup(const char *s1, size_t n);
 size_t	ft_strlen(const char *s);
+size_t	ft_strnlen(const char *s, size_t maxlen);
 char	*ft_strcat(const char *s1, const char *s2);
+char	*ft_strcpy(char *s1, const char *s2);
 void	*ft_memset(void *b, int c, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 void	*ft_memalloc(size_t size);
 void	ft_cat(int fd);
-void	ft_memdel(void **ptr);
 int		ft_isin(char c, char *str);
 
 void test_isalpha(void);

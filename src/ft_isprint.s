@@ -1,8 +1,8 @@
 %define TRUE 1
 %define FALSE 0
 
-%define MIN_PRINT 32
-%define MAX_PRINT 126
+%define MIN_PRINT ' '
+%define MAX_PRINT '~'
 
 section .text
 	global ft_isprint
