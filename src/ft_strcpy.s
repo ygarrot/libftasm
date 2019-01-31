@@ -5,10 +5,10 @@ section .text
 
 ft_strcpy:
 	enter 16, 0
-	mov r12, rdi
+	mov r10, rdi
 	mov rdi, rsi
 	call ft_strlen
-	mov rdi, r12
+	mov rdi, r10
 	inc rax
 	mov rdx, rax 
 	call ft_memcpy

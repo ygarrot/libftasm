@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:59 by ygarrot           #+#    #+#             */
-/*   Updated: 2019/01/31 11:37:39 by ygarrot          ###   ########.fr       */
+/*   Updated: 2019/01/31 12:19:48 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,14 +54,14 @@ void test_strndup(void)
 	char *str = ft_strndup("test strdup", 1);
 	if (!str)
 		return;
-	printf("{%s}\n", str);
+	printf("test strdup 1{%s}\n", str);
 	free(str);
 	/* str = strndup(NULL, 5); */
 	str = ft_strndup("12345", 5);
-	printf("{%s}\n", str);
+	printf("12345 5 {%s}\n", str);
 	free(str);
 	str = ft_strndup("", 5);
-	printf("{%s}\n", str);
+	printf("\"\" 5 {%s}\n", str);
 	free(str);
 }
 
@@ -69,10 +69,10 @@ void test_strdupto(void)
 {
 	printf("*****************************  TEST STRDUPTO\n");
 	char *str = ft_strdupto("test strdup", 'u');
-	printf("{%s}\n", str);
+	printf("test strdup u {%s}\n", str);
 	free(str);
 	str = ft_strdupto("", 'c');
-	printf("{%s}\n", str);
+	printf("\"\" c {%s}\n", str);
 	free(str);
 }
 
@@ -81,7 +81,7 @@ void test_strdup(void)
 	printf("*****************************  TEST STRDUP\n");
 	/* strdup(NULL); */
 	char *str = ft_strdup("test strdup");
-	printf("{%s}\n", str);
+	printf("test strdup {%s}\n", str);
 	free(str);
 	str = ft_strdup("");
 	printf("{%s}\n", str);
@@ -137,10 +137,10 @@ void test_strnlen(void)
 void test_strlento(void)
 {
 	printf("*****************************  TEST STRLENTO\n");
-	printf("%d\n", (int)ft_strlento("petitponeys", 'y'));
-	printf("%d\n", (int)ft_strlento("", 'y'));
-	printf("%d\n", (int)ft_strlento("ry", 'y'));
-	printf("%d\n", (int)ft_strlento("y", 'y'));
+	printf("petitponeys y %d\n", (int)ft_strlento("petitponeys", 'y'));
+	printf("\"\" y %d\n", (int)ft_strlento("", 'y'));
+	printf("ry y %d\n", (int)ft_strlento("ry", 'y'));
+	printf("y y %d\n", (int)ft_strlento("y", 'y'));
 }
 
 void test_strlen(void)
@@ -256,8 +256,9 @@ void test_isin(void)
 {
 	printf("*****************************  TEST ISIN\n");
 	printf("c  asca %d\n", ft_isin('c', "asca"));
+	printf("o  petitponeys %d\n", ft_isin('o', "petitponeys"));
 	printf("x  asca %d\n", ft_isin('x', "asca"));
-	printf("x  \"\" %d\n", ft_isin('x', ""));
+	printf("w  \"\" %d\n", ft_isin('w', ""));
 	printf("u  \"u\" asca %d\n", ft_isin('u', "u"));
 }
 

@@ -19,10 +19,12 @@ save:
 recover:
 	pop rdi
 	pop rsi
+	mov rcx, rax
 
 find:
 	mov al, sil 
-	mov rcx, rax
+	mov rsi, rdi
+	cld
 	repne scasb
 	cmp rcx, 0
 	je smash

@@ -15,7 +15,7 @@ section .text
 ft_puts:
 	enter 0, 0
 	cmp rdi, 0
-	je err
+	je skip
 	push rdi
 	call ft_strlen
 	pop rsi
@@ -23,19 +23,28 @@ ft_puts:
 	mov rdx, rax
 	mov rax, MACH_SYSCALL(WRITE)
 	syscall
+	jc bsys
 	lea rsi, [rel resMsg]
 	mov rdi, STDOUT
 	mov rdx, 1 
 	mov rax, MACH_SYSCALL(WRITE)
 	syscall
+	jc bsys
 	jmp ret
 
-err:
+skip:
 	lea rsi, [rel error.string]
 	mov rdi, STDOUT
 	mov rdx, error.len 
 	mov rax, MACH_SYSCALL(WRITE)
 	syscall
+	jc bsys
+	jmp ret
+
+bsys:
+	mov rax, 0
+	leave
+	ret
 
 ret:
 	mov rax, 10
