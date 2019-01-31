@@ -6,7 +6,7 @@
 #    By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/12/07 11:09:55 by ygarrot           #+#    #+#              #
-#    Updated: 2019/01/30 19:19:57 by ygarrot          ###   ########.fr        #
+#    Updated: 2019/01/31 11:37:49 by ygarrot          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,7 +51,6 @@ TEST_EXEC = test.exe
 
 NASM_CMD = nasm -f macho64 --prefix _ -dOSX=1 -g
 CC_FLAGS = -Wall -Werror -Wextra -o
-SANITIZE = -fsanitize=address -g3
 INC_DIR = ./test/includes/
 
 SRCS = $(addprefix $(SRC_DIR)/, $(SRC))

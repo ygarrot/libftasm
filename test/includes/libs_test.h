@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:42 by ygarrot           #+#    #+#             */
-/*   Updated: 2019/01/30 19:19:42 by ygarrot          ###   ########.fr       */
+/*   Updated: 2019/01/31 11:02:37 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBS_TEST_H
@@ -22,6 +22,7 @@ int		ft_isdigit(int c);
 int		ft_islower(int c);
 int		ft_isupper(int c);
 int		ft_isalnum(int c);
+int		ft_abs(int c);
 int		ft_isprint(int c);
 int		ft_isascii(int c);
 int		ft_toupper(int c);

@@ -7,10 +7,10 @@ ft_memalloc:
 	enter 8, 0
 	push rdi
 	call malloc
-	pop rsi
 	cmp rax, 0
 	jz ret
-	mov rax, rdi
+	pop rsi
+	mov rdi, rax
 	call ft_bzero
 
 ret:

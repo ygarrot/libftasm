@@ -6,7 +6,7 @@
 /*   By: ygarrot <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/08 14:03:59 by ygarrot           #+#    #+#             */
-/*   Updated: 2019/01/30 19:08:44 by ygarrot          ###   ########.fr       */
+/*   Updated: 2019/01/31 11:37:39 by ygarrot          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,6 @@
 #include <stdlib.h>
 #include <limits.h>
 #include <ctype.h>
-
-int		ft_abs(int nb);
 
 void test_min(void)
 {
@@ -114,8 +112,7 @@ void test_cat(void)
 	printf("*****************************  TEST CAT\n");
 	/* cat("/dev/random"); */
 	/* cat("/dev/random"); */
-	cat("./test/test_main.c");
-
+	cat("./test/test_value.c");
 }
 
 void test_strnlen(void)
@@ -250,7 +247,8 @@ void test_memset(void)
 	char c = 'o';
 	int len = ft_strlen(str1);
 
-	ft_memset(str1, c, len );
+	
+	printf("true:{%s} false:{%s}\n", ft_memset(str1, c, len ), memset(str1, c, len));
 	free(str1);
 }
 
