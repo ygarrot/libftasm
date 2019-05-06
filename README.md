@@ -23,8 +23,9 @@ II.2.2 Part 2 - Fonctions simples mais un peu moins de la libc
 
 Dans cette deuxième partie, vous devez recoder encore des fonctions de la libc, mais
 avec les Instruction Repeat String Operations.
-Un peu de documentation
+
 Vous devez recoder les fonctions suivantes :
+
 • strlen
 • memset
 • memcpy
