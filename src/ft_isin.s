@@ -4,6 +4,7 @@
 section .text
 	global ft_isin
 	extern ft_strlen
+	extern ft_puts
 
 ft_isin:
 	enter 0, 0
@@ -11,19 +12,18 @@ ft_isin:
 	je smash
 
 save:
-	push rdi
-	push rsi
-	mov rdi, rsi
+	push rdi ;/push char
+	;mov al, dil ;al = dil
+	mov rdi, rsi ;/rdi = rsi
 	call ft_strlen
 
 recover:
-	pop rdi
-	pop rsi
+	pop rdi ;/rdi = rsi
 	mov rcx, rax
 
 find:
-	mov al, sil 
-	mov rsi, rdi
+	mov al, dil ;al = dil
+	mov rdi, rsi
 	cld
 	repne scasb
 	cmp rcx, 0
