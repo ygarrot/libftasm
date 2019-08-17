@@ -10,14 +10,12 @@ init:
 	push rdi
 	call ft_strlen
 	mov rcx, rax	;rcx = value max
-	pop rsi
-	mov rdi, rsi
+	pop rdi
 
 len:
 	cld
 	repne scasb		;tant que [rdi] != al rdi++; rcx--
 	sub rdi, rsi	;rdi = rdi - rsi
-	dec rdi			;rdi len -1
 	mov rax, rdi	;rax = rdi
 
 ret:
